@@ -17,14 +17,19 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 <html>
   <body>
-    <body>
+ 
 <a href="/">Home</a>
 <a href="/blog">Blog</a>
 <h1>{pageTitle}</h1>
+<h1>{identity.firstName}</h1>
+
+<p>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}</p>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-</body>
-    <a href="/blog/post-1">Read More</a>
+  <p>My skills are:</p>
+  <ul>
+    {skills.map((skill) => (<li>{skill}</li>))}
+  </ul>
   </body>
 </html>
