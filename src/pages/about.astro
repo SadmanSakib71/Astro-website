@@ -1,6 +1,5 @@
 ---
-import Footer from '../component/Footer.astro';
-import Header from '../component/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../style/global.css';
 const name = "Sadmnan Sakib";
 
@@ -20,17 +19,9 @@ const finished = false;
 const goal = 3;
 ---
 
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width" />
-  </head>
+<BaseLayout pageTitle={pageTitle}>
 
-  <body>
- 
-<Header/>
-<h1>{pageTitle}</h1>
-<h1>{identity.firstName}</h1>
+  <h1>{identity.firstName}</h1>
 
 <p>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}</p>
 {happy && <p>Manna vai</p>}
@@ -41,10 +32,6 @@ const goal = 3;
   <ul>
     {skills.map((skill) => (<li>{skill}</li>))}
   </ul>
-  <Footer/>
+</BaseLayout>
 
- <script>
-    import "../scripts/menu.js";
-  </script>
-  </body>
-</html>
+
