@@ -1,4 +1,5 @@
 ---
+import Greeting from '../component/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../style/global.css';
 const pageTitle = "Home Page";
@@ -7,4 +8,7 @@ const pageTitle = "Home Page";
 <BaseLayout pageTitle={pageTitle}>
  <h2>My awesome blog subtitle</h2>
  <h1>Anything i can write here,it will show as my child content and slot does this</h1>
+ <Greeting messages={["Hi", "Hello", "Howdy", "Hey there"]} />
+<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
 </BaseLayout>
