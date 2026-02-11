@@ -4,4 +4,12 @@ const { frontmatter } = Astro.props;
 <meta charset="utf-8" />
 <h1>{frontmatter.title}</h1>
 <p>Written by {frontmatter.author}</p>
+<p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+<p>{frontmatter.description}</p>
+<img src={frontmatter.image.url} alt={frontmatter.image.alt}>
+<p>My skills are:</p>
+  <ul>
+    {frontmatter.tags.map((t:unknown) => (<li>{t}</li>))}
+  </ul>
+
 <slot />
